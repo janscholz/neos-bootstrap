@@ -1,0 +1,14 @@
+{
+    "description": "Neos bootstrap integration",
+    "type": "neos-package",
+    "license": "GPL-3.0+",
+    "require": {
+        "typo3/flow": "*"
+    },
+    "name": "janscholz/neos-bootstrap",
+    "extra": {
+        "neos": {
+            "package-key": "JanScholz.NeosBootstrap"
+        }
+    }
+}
