@@ -1,0 +1,24 @@
+{
+  "name": "neos-bootstrap",
+  "version": "0.0.1",
+  "description": "Neos bootstrap integration - build a customized bootstrap css with grunt",
+  "author": "Jan Scholz",
+  "license": "GPL-3.0+",
+  "dependencies": {},
+  "devDependencies": {
+    "bootstrap": "^3.3.7",
+    "grunt": "^1.0.1",
+    "grunt-contrib-copy": "^1.0.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/janscholz/neos-bootstrap"
+  },
+  "bugs": {
+    "url": "https://github.com/janscholz/neos-bootstrap/issues"
+  },
+  "homepage": "https://github.com/janscholz/neos-bootstrap"
+}
