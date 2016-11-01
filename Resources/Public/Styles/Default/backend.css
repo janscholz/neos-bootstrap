@@ -1,0 +1,17 @@
+.neos-backend:not(.neos-full-screen) .top-navigation-wrap  {
+	top: 82px;
+
+}
+
+.neos-edit-preview-panel-open:not(.neos-full-screen) .top-navigation-wrap {
+	top: 192px;
+
+}
+
+.neos-navigate-panel-open:not(.neos-full-screen) .top-navigation-wrap {
+	left: 320px;
+}
+
+.neos-inspector-panel-open:not(.neos-full-screen) .top-navigation-wrap {
+	right: 320px;
+}

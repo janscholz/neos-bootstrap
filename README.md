@@ -11,8 +11,15 @@ Bootstrap neos integration. Change dynamically the bootstrap css in neos backend
 
 ## Section stylesheets
     <f:section name="stylesheets">
-            <link id="js-bootstrap-css" rel="stylesheet" href="{f:uri.resource(path: 'Styles/Default/bootstrap.min.css', package: 'JanScholz.NeosBootstrap')}" media="all" />
-            <link id="js-bootstrap-theme-css" rel="stylesheet" href="{f:uri.resource(path: 'Styles/Default/bootstrap-theme.min.css', package: 'JanScholz.NeosBootstrap')}" media="all" />
+        <link id="js-bootstrap-css" rel="stylesheet" href="{f:uri.resource(path: 'Styles/Default/bootstrap.min.css', package: 'JanScholz.NeosBootstrap')}" media="all" />
+        <link id="js-bootstrap-theme-css" rel="stylesheet" href="{f:uri.resource(path: 'Styles/Default/bootstrap-theme.min.css', package: 'JanScholz.NeosBootstrap')}" media="all" />
+
+        <f:if condition="{neos:rendering.inBackend()}">
+            <f:then>
+                <!-- Neos Backend CSS -->
+                <link rel="stylesheet" href="{f:uri.resource(path: 'Styles/Default/backend.css', package: 'JanScholz.NeosBootstrap')}" media="all" />
+            </f:then>
+        </f:if>
     </f:section>
 
 ## Section bodyScripts
