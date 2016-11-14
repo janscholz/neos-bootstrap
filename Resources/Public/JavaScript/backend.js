@@ -2,37 +2,48 @@
 $(document).ready(function() {
 
     document.addEventListener('Neos.InspectorPanelOpened', function(event) {
-        changeBootstrapPageCSS('640');
+        initBootstrapPageCSS(0);
     });
 
     document.addEventListener('Neos.InspectorPanelClosed', function(event) {
-        changeBootstrapPageCSS('320');
+        initBootstrapPageCSS(0);
     });
 
     document.addEventListener('Neos.FullScreenModeActivated', function(event) {
-        changeBootstrapPageCSS('Default');
+        initBootstrapPageCSS(0);
     });
 
     document.addEventListener('Neos.FullScreenModeDeactivated', function(event) {
-        initBootstrapPageCSS()
+        initBootstrapPageCSS(0);
     });
 
-    initBootstrapPageCSS();
+    document.addEventListener('Neos.NavigatePanelOpened', function(event) {
+        initBootstrapPageCSS(0);
+    });
 
-    function initBootstrapPageCSS() {
+    document.addEventListener('Neos.NavigatePanelClosed', function(event) {
+        initBootstrapPageCSS(0);
+    });
+
+    initBootstrapPageCSS(500);
+
+    function initBootstrapPageCSS(timeout) {
         setTimeout(function() {
-            if ($(".neos-backend").length > 0) {
-                if ($('.neos-inspector-panel-open').length > 0) {
-                    changeBootstrapPageCSS('640');
-                } else if ($('.neos-full-screen').length > 0) {
+            if ($('.neos-backend').length > 0) {
+                if ($('body').hasClass('neos-full-screen')) {
                     changeBootstrapPageCSS('Default');
-                } else {
+                } else if ($('body').hasClass('neos-navigate-panel-open') && $('body').hasClass('neos-inspector-panel-open')) {
+                    changeBootstrapPageCSS('640');
+                } else if ($('body').hasClass('neos-navigate-panel-open') || $('body').hasClass('neos-inspector-panel-open')) {
                     changeBootstrapPageCSS('320');
+                    console.log('320');
+                } else {
+                    changeBootstrapPageCSS('Default');
                 }
             } else {
                 initBootstrapPageCSS();
             }
-        }, 500);
+        }, timeout);
     }
 
     function changeBootstrapPageCSS(cssDirectory) {

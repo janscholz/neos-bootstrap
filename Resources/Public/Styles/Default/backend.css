@@ -15,15 +15,3 @@
 .neos-inspector-panel-open:not(.neos-full-screen) .top-navigation-wrap {
 	right: 320px;
 }
-
-.container-fluid {
-	padding-right: 335px;
-}
-
-.neos-inspector-panel-open:not(.neos-full-screen) .container-fluid {
-	padding-right: 655px;
-}
-
-.neos-full-screen .container-fluid {
-	padding-right: 15px;
-}
